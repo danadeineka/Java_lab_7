@@ -84,7 +84,7 @@ public class InvestmentCompany {
         return yearOfFoundation;
     }
 
-    public static void setYearOfFoundation(int yearOfFoundation) {
+    public static final void setYearOfFoundation(int yearOfFoundation) {
         InvestmentCompany.yearOfFoundation = yearOfFoundation;
     }
 
@@ -113,17 +113,9 @@ public class InvestmentCompany {
         this.country = country;
     }
 
-    public InvestmentCompany(String address, int investments, int capital, String country, String name, int employees, String founder, String reliability, String email, int phone_number) {
-        this.address = address;
-        this.investments = investments;
-        this.capital = capital;
-        this.country = country;
-        this.name = name;
-        this.employees = employees;
-        this.founder = founder;
-        this.reliability = reliability;
-        this.email = email;
-        this.phone_number = phone_number;
+    public InvestmentCompany(String address, int investments, int capital, String country, String name,
+                             int employees, String founder, String reliability, String email, int phone_number) {
+        resetValues(address, investments, capital,country, name, employees, founder, reliability, email, phone_number);
     }
 
     @Override
@@ -141,11 +133,13 @@ public class InvestmentCompany {
                 ", phone_number=" + phone_number ;
     }
 
-    public void printStaticYearOfFoundation() { System.out.println(yearOfFoundation);}
+    public static void printStaticYearOfFoundation() { System.out.println(yearOfFoundation);}
 
     public void printYearOfFoundation(){ System.out.println(yearOfFoundation);}
 
-    public void resetValues(String address, int investments, int capital, String country, String name, int employees, String founder, String reliability, String email, int phone_number) {
+
+    public void resetValues(String address, int investments, int capital, String country, String name,
+                            int employees, String founder, String reliability, String email, int phone_number) {
         this.address = address;
         this.investments = investments;
         this.capital = capital;
