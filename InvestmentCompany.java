@@ -3,7 +3,7 @@ package com.company;
 public class InvestmentCompany {
     private String address;
     private int investments;
-    private int capital;
+    private String capital;
 
     private String country;
     private String name;
@@ -11,7 +11,7 @@ public class InvestmentCompany {
     private String founder;
     private String reliability;
 
-    private static int yearOfFoundation;
+    private static int yearOfFoundation = 1960;
 
     protected String email;
     protected int phone_number;
@@ -32,11 +32,11 @@ public class InvestmentCompany {
         this.investments = investments;
     }
 
-    public int getCapital() {
+    public String getCapital() {
         return capital;
     }
 
-    public void setCapital(int capital) {
+    public void setCapital(String capital) {
         this.capital = capital;
     }
 
@@ -84,8 +84,9 @@ public class InvestmentCompany {
         return yearOfFoundation;
     }
 
-    public static final void setYearOfFoundation(int yearOfFoundation) {
+    public static final int setYearOfFoundation(int yearOfFoundation) {
         InvestmentCompany.yearOfFoundation = yearOfFoundation;
+        return yearOfFoundation;
     }
 
     public String getEmail() {
@@ -104,41 +105,52 @@ public class InvestmentCompany {
         this.phone_number = phone_number;
     }
 
-    public InvestmentCompany() {}
 
-    public InvestmentCompany(String address, int investments, int capital, String country) {
-        this.address = address;
-        this.investments = investments;
-        this.capital = capital;
-        this.country = country;
+    public InvestmentCompany(String address, int investments, String capital, String country, String name,
+                             int employees, String founder, String reliability, String email, int phone_number) {
+        setValues(address, investments, capital, country, name, employees, founder,  reliability,  email,  phone_number);
     }
 
-    public InvestmentCompany(String address, int investments, int capital, String country, String name,
-                             int employees, String founder, String reliability, String email, int phone_number) {
-        resetValues(address, investments, capital,country, name, employees, founder, reliability, email, phone_number);
+    public InvestmentCompany(String address, int investments, String  capital, String country) {
+        this (address, investments, capital, country, null, 0, null, null,
+                null, 0);
+    }
+
+    public InvestmentCompany() {
+        this(null, 0, null, null, null, 0, null, null,
+                null,0 );
     }
 
     @Override
     public String toString() {
         return "InvestmentCompany\n" +
-                "address='" + address + '\'' +
-                ", investments=" + investments +
-                ", capital=" + capital +
-                ", country='" + country + '\'' +
-                ", name='" + name + '\'' +
-                ", employees=" + employees +
-                ", founder='" + founder + '\'' +
-                ", reliability='" + reliability + '\'' +
-                ", email='" + email + '\'' +
-                ", phone_number=" + phone_number ;
+                "Address='" + address + '\'' +
+                ", Investments=" + investments +
+                ", Capital=" + capital +
+                ", Country='" + country + '\'' +
+                ", Name='" + name + '\'' +
+                ", Employees=" + employees +
+                ", Founder='" + founder + '\'' +
+                ", Reliability='" + reliability + '\'' +
+                ", Email='" + email + '\'' +
+                ", Phone_number=" + phone_number ;
     }
 
-    public static void printStaticYearOfFoundation() { System.out.println(yearOfFoundation);}
+    public static void printStaticYearOfFoundation() {
+        System.out.println(yearOfFoundation);
+    }
 
-    public void printYearOfFoundation(){ System.out.println(yearOfFoundation);}
+    public void printYearOfFoundation(){
+        System.out.println(yearOfFoundation);
+    }
 
 
-    public void resetValues(String address, int investments, int capital, String country, String name,
+    public void resetValues(String address, int investments, String capital, String country, String name,
+                            int employees, String founder, String reliability, String email, int phone_number) {
+        setValues(address, investments, capital, country,  name, employees, founder, reliability, email,  phone_number);
+    }
+
+    private void setValues(String address, int investments, String capital, String country, String name,
                             int employees, String founder, String reliability, String email, int phone_number) {
         this.address = address;
         this.investments = investments;
