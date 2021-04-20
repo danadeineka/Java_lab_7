@@ -11,7 +11,7 @@ public class InvestmentCompany {
     private String founder;
     private String reliability;
 
-    private static int yearOfFoundation = 1960;
+    private static int employeeCount = 355;
 
     protected String email;
     protected int phone_number;
@@ -80,14 +80,10 @@ public class InvestmentCompany {
         this.reliability = reliability;
     }
 
-    public static int getYearOfFoundation() {
-        return yearOfFoundation;
+    public static int getEmployeeCount() {
+        return employeeCount;
     }
 
-    public static final int setYearOfFoundation(int yearOfFoundation) {
-        InvestmentCompany.yearOfFoundation = yearOfFoundation;
-        return yearOfFoundation;
-    }
 
     public String getEmail() {
         return email;
@@ -136,12 +132,12 @@ public class InvestmentCompany {
                 ", Phone_number=" + phone_number ;
     }
 
-    public static void printStaticYearOfFoundation() {
-        System.out.println(yearOfFoundation);
+    public static void printStaticEmployeeCount() {
+        System.out.println(employeeCount);
     }
 
-    public void printYearOfFoundation(){
-        System.out.println(yearOfFoundation);
+    public void printEmployeeCount(){
+        System.out.println(employeeCount);
     }
 
 

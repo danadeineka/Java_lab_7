@@ -14,7 +14,7 @@ public class Main {
         System.out.println("---------------------------------------------");
 
 
-        alpineInvestors.printStaticYearOfFoundation();
-        alpineInvestors.printYearOfFoundation();
+        InvestmentCompany.printStaticEmployeeCount();
+
     }
 }
